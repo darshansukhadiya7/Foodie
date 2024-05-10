@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    <servlet>
+        <servlet-name>LoginServlet</servlet-name>
+        <servlet-class>LoginServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>uploadDataServlet</servlet-name>
+        <servlet-class>uploadDataServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LoginServlet</servlet-name>
+        <url-pattern>/LoginServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>uploadDataServlet</servlet-name>
+        <url-pattern>/uploadDataServlet</url-pattern>
+    </servlet-mapping>
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+    <multipart-config>
+        <!-- Set the maximum size of a single uploaded file -->
+        <max-file-size>1048576</max-file-size>
+        <!-- 1 MB -->
+        <!-- Set the maximum size of all uploaded files combined -->
+        <max-request-size>2097152</max-request-size>
+        <!-- 2 MB -->
+        <!-- Set the location where the uploaded files will be stored temporarily -->
+        <location>/upload</location>
+    </multipart-config>
+</web-app>
